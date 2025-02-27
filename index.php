@@ -32,7 +32,9 @@ $resultado = $banco->query($select)->fetchAll();
                 <td class="text-center">
                     <a href="./ficha.php?id_aluno=<?= $linha['id'] ?>" class="btn btn-primary">abrir</a>
                     <a href="#" class="btn btn-warning">editar</a>
-                    <a href="#" class="btn btn-danger">excluir</a>
+
+
+                    <a class="btn btn-danger" href="./aluno-deletar.php?id=<?= $linha['id'] ?>">excluir</a>
                 </td>
             </tr>
         <?php } ?>
