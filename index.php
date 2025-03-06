@@ -1,40 +1,42 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<html lang="pt-br">
 <?php
 
+// echo "Olá";
 
-
-$dsn = 'mysql:dbname=bd_chamadinhaa;host=127.0.0.1';
+$dsn = 'mysql:dbname=db_chamadinha;host=127.0.0.1';
 $user = 'root';
 $password = '';
 
 $banco = new PDO($dsn, $user, $password);
 
-$select = 'SELECT * FROM tb_alunos';
+$select = "SELECT * FROM tb_aluno";
 
 $resultado = $banco->query($select)->fetchAll();
 
-// echo '<pre>';
-// var_dump($resultado);
+// echo '<pre>'; //pre serve para organizar 
+// var_dump($resultado); //ele faz um debug das informações
 ?>
+
 <main class="container my-5">
     <table class="table table-striped">
+        <div class="my-3 d-flex justify-content-end">
+            <a href="formulario.php" class="btn btn-success">Cadastrar Novo Aluno</a>
+        </div>
         <tr>
-            <td>ID</td>
-            <td>Nome</td>
-            <td>Ações</td>
+            <td>    id  </td>
+            <td>    nome  </td>
+            <td class="text-center">    ação</td>
         </tr>
 
-        <?php foreach ($resultado as $linha) { ?>
+        <?php foreach($resultado as $linha) {?> <!-- AS significa -->
             <tr>
-                <td><?= $linha['id'] ?></td>
-                <td><?php echo $linha['nome'] ?></td>
+                <td>  <?=$linha['id'] ?> </td>
+                <td>  <?php echo $linha['nome'] ?> </td>
                 <td class="text-center">
-                    <a href="./ficha.php?id_aluno=<?= $linha['id'] ?>" class="btn btn-primary">abrir</a>
-                    <a href="#" class="btn btn-warning">editar</a>
-
-
-                    <a class="btn btn-danger" href="./aluno-deletar.php?id=<?= $linha['id'] ?>">excluir</a>
+                    <a class="btn btn-primary" href="./ficha.php?id_aluno=<?=$linha['id'] ?>">Abrir</a>
+                    <a class="btn btn-warning" href="./formulario -editar.php?id_aluno_alterar=<?=$linha['id'] ?>">Editar</a>
+                    <a class="btn btn-danger" href="./aluno-deletar.php?id=<?=$linha['id'] ?>">Excluir</a>
+                                                <!-- caminho arquivo ? variável-->
                 </td>
             </tr>
         <?php } ?>
