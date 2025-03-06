@@ -76,7 +76,7 @@
 
             <div class="col">
                 <label for="telefone">Telefone:</label>
-                <input type="number"   class="form-control" name="tel" value="<?= $dados['telefone'] ?>"
+                <input type="number"   class="form-control" name="telefone" value="<?= $dados['telefone'] ?>"
             </div>
 
             <div class="col">
@@ -87,7 +87,7 @@
         <div class="row mt-2">
             <div class="col">
                 <label for="data_nascimento">Data de Nascimento:</label>
-                <input type="date"   class="form-control" name="nasc"  value="<?= $dados['nascimento'] ?>">
+                <input type="date"   class="form-control" name="nascimento"  value="<?= $dados['nascimento'] ?>">
             </div>
 
             <div class="col my-4 pt-2">
