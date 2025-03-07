@@ -46,7 +46,7 @@
 
 <main class="container text-center my-5">   
 
-    <h2>CADASTRAR ALUNO</h2>
+    <h2>editar aluno</h2>
     <br>
     
 
