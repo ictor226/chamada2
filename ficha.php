@@ -1,16 +1,15 @@
-<?php
+<?php //abrindo a teg phph para colocar o codigo
 
-//Para puxar informação da URL, que nesse caso é o id_aluno
-$id_aluno = $_GET['id_aluno'];
+$id_aluno = $_GET['id_aluno'];//Para puxar informação da URL, que nesse caso é o id_aluno
 
 
 $dsn = 'mysql:dbname=db_chamadinha;host=127.0.0.1';
-$user = 'root';
-$password = '';
+$user = 'root';//user
+$password = '';//senha
 
-$banco = new PDO($dsn, $user, $password);
+$banco = new PDO($dsn, $user, $password); //validacao para o banco de dados
 
-$select = "SELECT tb_info_alunos.*, tb_aluno.nome FROM tb_info_alunos INNER JOIN tb_aluno ON tb_aluno.id = tb_info_alunos.id_alunos WHERE tb_info_alunos.id_alunos= " . $id_aluno;
+$select = "SELECT tb_info_alunos.*, tb_aluno.nome FROM tb_info_alunos INNER JOIN tb_aluno ON tb_aluno.id = tb_info_alunos.id_alunos WHERE tb_info_alunos.id_alunos= " . $id_aluno; //selecionando ad info do banco
 
 $dados = $banco->query($select)->fetch();
 
@@ -20,9 +19,10 @@ $dados = $banco->query($select)->fetch();
 
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<!-- seria um link para o bootstrap -->
 
 
-<style>
+<style> /* comando para abrir o css e estilizar */ 
     main {
         display: flex;
         flex-direction: column;
@@ -39,11 +39,11 @@ $dados = $banco->query($select)->fetch();
     }
 </style>
 
-<main class="container text-center my-5">
+<main class="container text-center my-5"> <!-- teg html e juto a ela uma class -->
 
-    <img src="./img/<?= $dados['img'] ?>" alt="imagem do perfil" class="img-thumbnail">
+    <img src="./img/<?= $dados['img'] ?>" alt="imagem do perfil" class="img-thumbnail"> <!-- teg html img -->
 
-    <form action="#">
+    <form action="#"> <!-- começando um formulario -->
 
         <label for="nome">Nome:</label class="form-control">
         <input type="text" value="<?= $dados['nome'] ?>" disabled class="form-control">
