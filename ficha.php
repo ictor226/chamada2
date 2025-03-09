@@ -45,29 +45,29 @@ $dados = $banco->query($select)->fetch();
 
     <form action="#"> <!-- começando um formulario -->
 
-        <label for="nome">Nome:</label class="form-control">
-        <input type="text" value="<?= $dados['nome'] ?>" disabled class="form-control">
+        <label for="nome">Nome:</label class="form-control"> <!-- campo para colocar uma info -->
+        <input type="text" value="<?= $dados['nome'] ?>" disabled class="form-control"> <!-- aqui vai o codigo php para dar validacao em outro arquivo -->
         <div class="row mt-2 ">
 
             <div class="col">
-                <label for="telefone">Telefone:</label>
-                <input type="number" value="<?= $dados['telefone'] ?>" disabled class="form-control">
+                <label for="telefone">Telefone:</label> <!-- campo para colocar uma info -->
+                <input type="number" value="<?= $dados['telefone'] ?>" disabled class="form-control"> <!-- aqui vai o codigo php para dar validacao em outro arquivo -->
             </div>
 
             <div class="col">
-                <label for="email">Email:</label>
-                <input type="email" value="<?= $dados['email'] ?>" disabled class="form-control">
+                <label for="email">Email:</label> <!-- campo para colocar uma info -->
+                <input type="email" value="<?= $dados['email'] ?>" disabled class="form-control"><!-- aqui vai o codigo php para dar validacao em outro arquivo -->
             </div>
         </div>
         <div class="row mt-2">
             <div class="col">
-                <label for="data_nascimento">Data de Nascimento:</label>
-                <input type="date" value="<?= $dados["nascimento"] ?>" disabled class="form-control">
+                <label for="data_nascimento">Data de Nascimento:</label> <!-- campo para colocar uma info -->
+                <input type="date" value="<?= $dados["nascimento"] ?>" disabled class="form-control"><!-- aqui vai o codigo php para dar validacao em outro arquivo -->
             </div>
 
             <div class="col my-4 pt-2">
                 <input type="checkbox" class="form-check-input">
-                <label for="frequente">Frequente:</label>
+                <label for="frequente">Frequente:</label> <!-- campo para colocar uma info -->
             </div>
         </div>
     </form>
